@@ -1,0 +1,250 @@
+/* styles.css (Concepto con Mobile-First) */
+
+/* Variables de Color */
+:root {
+    --color-primary-dark: #0A2E5B;
+    --color-primary-light: #347ECB;
+    --color-grey-dark: #4A4A4A;
+    --color-grey-light: #D9D9D9;
+    --color-white: #FFFFFF;
+    --color-accent-green: #28A745;
+}
+
+/* Estilos Generales para Mobile (por defecto) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-white);
+    color: var(--color-grey-dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: var(--color-primary-dark);
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Botones (ejemplo) */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-accent-green);
+    color: var(--color-white);
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #218838; /* un tono de verde más oscuro al pasar el mouse */
+}
+
+/* Header */
+header {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.logo {
+    color: var(--color-white);
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Oculto por defecto en mobile, se muestra con JS o botón de hamburguesa */
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(10, 46, 91, 0.8), rgba(10, 46, 91, 0.8)), url('placeholder-bg.jpg') no-repeat center center/cover; /* Usar una imagen de fondo relevante y un overlay oscuro */
+    color: var(--color-white);
+    text-align: center;
+    padding: 80px 0;
+    min-height: 400px; /* Altura mínima para mobile */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    color: var(--color-white);
+}
+
+.hero-content p {
+    font-size: 1.1em;
+    margin-bottom: 1.5em;
+}
+
+/* Services Section */
+.services-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.service-item {
+    margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: var(--color-grey-light);
+}
+
+.service-item h3 {
+    color: var(--color-primary-dark);
+    margin-top: 10px;
+}
+
+/* Features Section */
+.features-section {
+    background-color: var(--color-primary-light);
+    color: var(--color-white);
+    padding: 50px 0;
+    text-align: center;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* CTA Section */
+.cta-section {
+    background-color: var(--color-accent-green);
+    color: var(--color-white);
+    text-align: center;
+    padding: 60px 0;
+}
+
+.cta-section h2 {
+    color: var(--color-white);
+    margin-bottom: 0.8em;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-grey-dark);
+    color: var(--color-white);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.footer-links li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+/* Media Queries para Ordenadores (Desktop) */
+@media (min-width: 768px) {
+    .container {
+        width: 85%;
+    }
+
+    /* Header */
+    nav ul {
+        display: flex; /* Mostrar navegación en desktop */
+    }
+
+    nav ul li {
+        margin-left: 25px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        padding: 120px 0;
+        min-height: 500px;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.3em;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Services Section */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .service-item {
+        margin-bottom: 0; /* Resetear margen de mobile */
+        text-align: left; /* Alineación de texto a la izquierda */
+    }
+
+    /* Features Section */
+    .features-content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        text-align: left;
+    }
+
+    .features-content .text-column {
+        flex: 1;
+    }
+
+    .features-content .image-column {
+        flex: 1;
+        text-align: center;
+    }
+
+    .feature-list li {
+        text-align: left;
+    }
+}
